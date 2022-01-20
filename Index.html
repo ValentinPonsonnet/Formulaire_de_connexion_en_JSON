@@ -4,20 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil</title>
+    <link rel="stylesheet" href="../Css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>Connection en Json statique</title>
 </head>
 <body>
     <header>
-        <h1>Ma boutique en ligne</h1>
+        
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="">Accueil</a></li>
-            <li><a href="">Shop</a></li>
-            <li><a href="">Les potains</a></li>
-            <li><a href="html/connection.html">Connection</a></li>
-        </ul>
-    </nav>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <img id="img" class="img-fluid" src="../asset/Eiffel_trocadero_i.jpg" alt="logo_du_site">
+            </div>
+                <div class="col-lg-4 mb-1 ">
+                    <h1>Ma boutique en ligne</h1>
+                            <p>Veuillez-vous connecter pour acceder à votre espace en utilisant l'adresse e-mail utiliser lors de l'inscription !</p>
+                        <form>
+                            <h2>Connexion :</h2>
+                            <div class="mb-3">
+                                <label for="InputEmail" class="form-label">Votre adresse E-mail :</label>
+                                <input type="email" placeholder="xxxx@gmail.com" class="form-control" id="mail" id="err_mail" id="InputEmail" aria-describedby="emailHelp">
+                                <p id="err_mail"></p>
+                            </div>
+                            <div class="mb-3">
+                                <label for="InputPassword" class="form-label">Mot de passe :</label>
+                                <input type="password" placeholder="Exemple"  id="pass" id="err_pass" id="tata" class="form-control" id="InputPassword">
+                                <p id="err_pass"></p>  
+                            </div>
+                                <button type="submit" disabled id="submit" id="spinner" class="btn btn-primary">Envoyer !</button>
+                            <div>
+                                <a href="mot_de_passe_oublié.html"><p>Mot de passe oublié ?</p></a>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>  
+    </div>
+
+    <footer>&copy;Tout les droits vont à leur propriètaire respectif</footer>
+    <script defer type="module" src="../javascript/script_connexion.js">
+        
+    </script>
 </body>
 </html>

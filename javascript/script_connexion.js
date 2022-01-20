@@ -1,3 +1,4 @@
+console.log("Coucou");
 window.onload = function() {
     document.querySelector("#mail").onkeyup = function() {
         testFields();
@@ -15,6 +16,7 @@ function testFields() {
         document.querySelector('#submit').disabled = true;
     }
     return [input_mail, input_pass];
+    
 }
 
 
@@ -26,7 +28,7 @@ function verif_form(){
     .then(data => {
         if(data.statut == "success"){
             document.querySelector('#success').innerHTML = "Login en cours";
-            document.querySelector('#spinner').classList.add(".spin");
+            document.querySelector('#spinner').classList.add('.spin');
         }
         else {
 
@@ -48,6 +50,11 @@ function verif_form(){
 
             // Reset du btn
         }
+        setTimeout(() => {
+            document.querySelector('#spinner').classList.remove(".spin");
+            document.location.replace("html/admin.html");
+        }, 3000);       
+        
 
     })
     .catch((error) => {

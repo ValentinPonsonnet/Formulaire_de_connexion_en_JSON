@@ -3,6 +3,10 @@
     padding : 0px;
     margin: 0px !important;
 }
+h2
+{
+    text-align: center;
+}
 @keyframes spinner {
     0% {
         transform: translate3d(-50%, -50%, 0) rotate(0deg);
@@ -11,23 +15,19 @@
         transform: translate3d(-50%, -50%, 0) rotate(360deg);
     }
 }
-h2
-{
-    text-align: center;
-}
 .spin::before
 {
     animation: 1.5s linear infinite spinner;
     animation-play-state: inherit;
-    border: solid 5px white;
-    border-bottom-color: black;
+    border: solid 5px black;
+    border-bottom-color: white;
     border-radius: 50%;
     content: "";
     height: 30px;
     width: 30px;
     position: absolute;
-    bottom: 46%;
-    right: 30%;
+    bottom: 0%;
+    right: 32%;
     transform: translate3d(-50%, -50%, 0);
     will-change: transform;
 }
