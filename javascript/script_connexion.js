@@ -56,4 +56,4 @@ function verif_form(){
 
     });  
 }
-e.preventDefault();
+//e.preventDefault();
