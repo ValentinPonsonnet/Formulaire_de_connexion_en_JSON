@@ -1,15 +1,19 @@
 *
 {
-    padding : 0;
-    margin: 0;
+    padding : 0px;
+    margin: 0px !important;
 }
 @keyframes spinner {
     0% {
         transform: translate3d(-50%, -50%, 0) rotate(0deg);
     }
     100%{
-        transform: translate3d(-50%, -50%, 0) rotate(180deg);
+        transform: translate3d(-50%, -50%, 0) rotate(360deg);
     }
+}
+h2
+{
+    text-align: center;
 }
 .spin::before
 {
@@ -19,18 +23,18 @@
     border-bottom-color: black;
     border-radius: 50%;
     content: "";
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     position: absolute;
-    top: 10%;
-    left: 10%;
+    bottom: 46%;
+    right: 30%;
     transform: translate3d(-50%, -50%, 0);
     will-change: transform;
 }
 form
 {
     border: black 2px solid;
-    border-radius: 30px;
+    border-radius: 20px;
     padding-left: 2%;
     padding-right: 2%;
     padding-top: 1%;
@@ -38,6 +42,7 @@ form
 }
 footer
 {
+    margin-right: 10%;
     background-color: violet;
     text-align: center;
 }

@@ -6,7 +6,6 @@ window.onload = function() {
         testFields();
     };
 };
-
 function testFields() {
     let input_mail = document.querySelector('#mail').value;
     let input_pass = document.querySelector('#pass').value;
@@ -27,7 +26,7 @@ function verif_form(){
     .then(data => {
         if(data.statut == "success"){
             document.querySelector('#success').innerHTML = "Login en cours";
-            document.querySelector('#tata').classList.add(".spinner");
+            document.querySelector('#spinner').classList.add(".spin");
         }
         else {
 
@@ -56,4 +55,4 @@ function verif_form(){
 
     });  
 }
-//e.preventDefault();
+e.preventDefault();
