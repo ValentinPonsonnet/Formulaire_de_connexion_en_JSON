@@ -1,4 +1,4 @@
-console.log("Coucou");
+
 window.onload = function() {
     document.querySelector("#mail").onkeyup = function() {
         testFields();
@@ -19,7 +19,6 @@ function testFields() {
     
 }
 
-
 document.querySelector('#submit').addEventListener('click', verif_form);
 function verif_form(){
 
@@ -28,7 +27,7 @@ function verif_form(){
     .then(data => {
         if(data.statut == "success"){
             document.querySelector('#success').innerHTML = "Login en cours";
-            document.querySelector('#spinner').classList.add('.spin');
+            document.querySelector("#btn-spinner").classList.add(".spin");
         }
         else {
 
@@ -51,7 +50,7 @@ function verif_form(){
             // Reset du btn
         }
         setTimeout(() => {
-            document.querySelector('#spinner').classList.remove(".spin");
+            document.querySelector().classList.remove();
             document.location.replace("html/admin.html");
         }, 3000);       
         
