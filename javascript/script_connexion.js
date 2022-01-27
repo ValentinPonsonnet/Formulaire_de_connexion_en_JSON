@@ -1,3 +1,5 @@
+console.log("Coucou")
+
 
 window.onload = function() {
     document.querySelector("#mail").onkeyup = function() {
@@ -27,7 +29,7 @@ function verif_form(){
     .then(data => {
         if(data.statut == "success"){
             document.querySelector('#success').innerHTML = "Login en cours";
-            document.querySelector("#btn-spinner").classList.add(".spin");
+            document.querySelector("#spin").classList.add(".spinner-border spinner-border-sm");
         }
         else {
 
@@ -49,10 +51,10 @@ function verif_form(){
 
             // Reset du btn
         }
-        setTimeout(() => {
-            document.querySelector().classList.remove();
-            document.location.replace("html/admin.html");
-        }, 3000);       
+        setTimeout(function(){
+            document.querySelector("#spin").classList.remove(".spinner-border spinner-border-sm");
+            window.location.assign('../html/admin.html');
+        }, 10000);       
         
 
     })
@@ -61,4 +63,4 @@ function verif_form(){
 
     });  
 }
-e.preventDefault();
+//e.preventDefault();
