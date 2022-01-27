@@ -53,7 +53,7 @@ function verif_form(){
         }
         setTimeout(function(){
             document.querySelector("#spin").classList.remove(".spinner-border spinner-border-sm");
-            window.location.assign('../html/admin.html');
+            document.location.assign('../html/admin.html');
         }, 10000);       
         
 
