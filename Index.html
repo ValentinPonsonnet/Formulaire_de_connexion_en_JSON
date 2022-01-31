@@ -27,6 +27,9 @@
                             <div class="mb-3">
                                 <label for="InputEmail" class="form-label">Votre adresse E-mail :</label>
                                 <input type="email" placeholder="xxxx@gmail.com" class="form-control" id="mail" id="err_mail" id="InputEmail" aria-describedby="emailHelp">
+                                    <div>
+                                        <span id="success"></span>
+                                    </div>
                                 <p id="err_mail"></p>
                             </div>
                             <div class="mb-3">
@@ -34,7 +37,7 @@
                                 <input type="password" placeholder="Exemple"  id="pass" id="err_pass" id="tata" class="form-control" id="InputPassword">
                                 <p id="err_pass"></p>  
                             </div>
-                                <button class="btn btn-primary" id="submit" disabled onclick="verif_form()">Connection
+                                <button class="btn btn-primary" id="submit" disabled>Connection
                                     <span id="spin" role="status" aria-hidden="true"></span>
                                 </button>
                                 <a href="/html/mot_de_passe_oublié.html"><p>Mot de passe oublié ?</p></a>

@@ -15,6 +15,13 @@ h2
         transform: translate3d(-50%, -50%, 0) rotate(360deg);
     }
 }
+@media (max-width: 900px)
+{
+  img
+  {
+      display: none;
+  }  
+}
 .spin::before
 {
     animation: 1.5s linear infinite spinner;

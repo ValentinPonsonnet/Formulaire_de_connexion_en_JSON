@@ -1,6 +1,3 @@
-console.log("Coucou")
-
-
 window.onload = function() {
     document.querySelector("#mail").onkeyup = function() {
         testFields();
@@ -9,6 +6,7 @@ window.onload = function() {
         testFields();
     };
 };
+
 function testFields() {
     let input_mail = document.querySelector('#mail').value;
     let input_pass = document.querySelector('#pass').value;
@@ -18,23 +16,22 @@ function testFields() {
         document.querySelector('#submit').disabled = true;
     }
     return [input_mail, input_pass];
-    
 }
+
 
 document.querySelector('#submit').addEventListener('click', verif_form);
 function verif_form(){
 
-    fetch('./code_erreur.json')
+    fetch('./login_error.json')
     .then(r => r.json())
     .then(data => {
         if(data.statut == "success"){
             document.querySelector('#success').innerHTML = "Login en cours";
-            document.querySelector("#spin").classList.add(".spinner-border spinner-border-sm");
         }
         else {
 
-            console.log(data.statut);
-            console.log(data.errors[2]);
+                //console.log(data.statut);
+                //console.log(data.errors[4]);
 
             if(data.statut == "error" && data.errors[1] == 1){
                 document.querySelector('#err_mail').innerHTML = "MISSING LOGIN";
@@ -51,16 +48,13 @@ function verif_form(){
 
             // Reset du btn
         }
-        setTimeout(function(){
-            document.querySelector("#spin").classList.remove(".spinner-border spinner-border-sm");
-            document.location.assign('../html/admin.html');
-        }, 10000);       
-        
+        setTimeout(() => {
+            
+        }, timeout);
 
     })
     .catch((error) => {
-        console.log("ERR");
+        //console.log("ERR");
 
-    });  
+    })
 }
-//e.preventDefault();
