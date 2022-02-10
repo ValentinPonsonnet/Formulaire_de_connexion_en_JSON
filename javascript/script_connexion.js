@@ -1,15 +1,15 @@
 window.onload = function() {
-    document.querySelector("#mail").onkeyup = function() {
+    document.querySelector("#value_mail").onkeyup = function() {
         testFields();
     };
-    document.querySelector("#pass").onkeyup = function() {
+    document.querySelector("#value_pass").onkeyup = function() {
         testFields();
     };
 };
 
 function testFields() {
-    let input_mail = document.querySelector('#mail').value;
-    let input_pass = document.querySelector('#pass').value;
+    let input_mail = document.querySelector('#value_mail').value;
+    let input_pass = document.querySelector('#value_pass').value;
     if(input_mail && input_pass)
         document.querySelector('#submit').disabled = false;
     else{
@@ -21,40 +21,39 @@ function testFields() {
 
 document.querySelector('#submit').addEventListener('click', verif_form);
 function verif_form(){
-
-    fetch('./login_error.json')
+    fetch("./json/code_success.json")
     .then(r => r.json())
     .then(data => {
-        if(data.statut == "success"){
-            document.querySelector('#success').innerHTML = "Login en cours";
+        console.log(data)
+        if(data.statut == "success")
+        {
+            setInterval(() => {
+                location.replace('html/admin.html');   
+            }, 1000);
         }
-        else {
+        else 
+        {
+            //console.log(data.statut);
+            //console.log(data.errors[4]);
 
-                //console.log(data.statut);
-                //console.log(data.errors[4]);
-
-            if(data.statut == "error" && data.errors[1] == 1){
-                document.querySelector('#err_mail').innerHTML = "MISSING LOGIN";
+            if(data.statut == "failed" && data.errors[1] == 1){
+                //document.querySelector('#miss_mail').innerHTML = "MISSING LOGIN";
             } 
-            if(data.statut == "error" && data.errors[2] == 1){
-                document.querySelector('#err_mail').innerHTML = "INVALID LOGIN";
+            if(data.statut == "failed" && data.errors[2] == 1){
+                //document.querySelector('#err_mail').innerHTML = "INVALID LOGIN";
             } 
-            if(data.statut == "error" && data.errors[3] == 1){
-                document.querySelector('#err_pass').innerHTML = "MISSING PASSWORD";
+            if(data.statut == "failed" && data.errors[3] == 1){
+                //document.querySelector('#miss_pass').innerHTML = "MISSING PASSWORD";
             }
-            if(data.statut == "error" && data.errors[4] == 1){
-                document.querySelector('#err_pass').innerHTML = "INVALID PASSWORD";
+            if(data.statut == "failed" && data.errors[4] == 1){
+                //document.querySelector('#err_pass').innerHTML = "INVALID PASSWORD";
             }
-
             // Reset du btn
         }
-        setTimeout(() => {
-            
-        }, timeout);
-
+       
     })
-    .catch((error) => {
-        //console.log("ERR");
+     .catch((error) => {
+            //console.log("ERR");
 
     })
 }

@@ -27,14 +27,14 @@ h2
     animation: 1.5s linear infinite spinner;
     animation-play-state: inherit;
     border: solid 5px black;
-    border-bottom-color: white;
+    border-bottom-color: red;
     border-radius: 50%;
     content: "";
     height: 30px;
     width: 30px;
     position: absolute;
     bottom: 0%;
-    right: 32%;
+    right: 30%;
     transform: translate3d(-50%, -50%, 0);
     will-change: transform;
 }
