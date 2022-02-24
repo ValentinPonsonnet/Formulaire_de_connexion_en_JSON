@@ -20,11 +20,12 @@ function testFields() {
 
 
 document.querySelector('#submit').addEventListener('click', verif_form);
-function verif_form(){
+function verif_form(e){
+e.preventDefault();
+
     fetch("./json/code_success.json")
     .then(r => r.json())
     .then(data => {
-        console.log(data)
         if(data.statut == "success")
         {
             setInterval(() => {
@@ -36,17 +37,17 @@ function verif_form(){
             //console.log(data.statut);
             //console.log(data.errors[4]);
 
-            if(data.statut == "failed" && data.errors[1] == 1){
-                //document.querySelector('#miss_mail').innerHTML = "MISSING LOGIN";
+            if(data.errors[1] == 1){
+                document.querySelector('#miss_mail').innerHTML = "MISSING LOGIN";
             } 
-            if(data.statut == "failed" && data.errors[2] == 1){
-                //document.querySelector('#err_mail').innerHTML = "INVALID LOGIN";
+            if(data.errors[2] == 1){
+                document.querySelector('#err_mail').innerHTML = "INVALID LOGIN";
             } 
-            if(data.statut == "failed" && data.errors[3] == 1){
-                //document.querySelector('#miss_pass').innerHTML = "MISSING PASSWORD";
+            if(data.errors[3] == 1){
+                document.querySelector('#miss_pass').innerHTML = "MISSING PASSWORD";
             }
-            if(data.statut == "failed" && data.errors[4] == 1){
-                //document.querySelector('#err_pass').innerHTML = "INVALID PASSWORD";
+            if(data.errors[4] == 1){
+                document.querySelector('#err_pass').innerHTML = "INVALID PASSWORD";
             }
             // Reset du btn
         }
